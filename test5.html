@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test6</title>
+	<style type="text/css">
+
+	    .show{
+            margin: 5px;
+            width: 500px;
+            height: 50px;
+            background-color: yellow; 
+
+        }
+		.red{
+            background: orangered;
+            color: white;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            float: left;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+	</style>
+</head>
+<body>
+	<input type="text" id="number">
+	<input type="button" onclick="LeftIn()" id="leftin" value="左侧入">
+	<input type="button" onclick="RightIn()" id="rightin" value="右侧入">
+	&nbsp;&nbsp;&nbsp;
+	<input type="button" onclick="LeftOut()" id="leftout" value="左侧出">
+	<input type="button" onclick="RightOut()" id="rightout" value="右侧出"> <br/>
+	<div id="show">
+		
+	</div>
+	<script type="text/javascript">
+		var nums=new Array(); //定义一个存放数字的队列
+		//为队列数字添加样式方法
+		function treestyle(){
+			var node="";
+				if(nums.length!=0){
+					for (var i in nums){
+					node=node +"<span class='red' onclick=removenum('"+i+"')>"+nums[i]+"</span>";
+				}
+			}
+			document.getElementById("show").innerHTML=node;
+			document.getElementById("number").value="";
+		}
+		//点击数字删除
+		function removenum(index){
+			alert(nums[index]);
+			nums.splice(index,1);
+			treestyle();
+		}
+		//左侧入方法
+		function LeftIn(){
+			var numb=document.getElementById("number").value;
+			nums.unshift(numb);
+			treestyle();
+		}
+		//右侧入方法
+		function RightIn(){
+			var numb=document.getElementById("number").value;
+			nums.push(numb);
+			treestyle();
+		}
+		//左侧出
+		function LeftOut(){
+			var numb=document.getElementById("number").value;
+			alert(nums[0]);
+			nums.shift(numb);
+			treestyle();
+		}
+		//右侧出
+		function RightOut(){
+			var numb=document.getElementById("number").value;
+			alert(nums[nums.length-1]);
+			nums.pop(numb);
+			treestyle();
+		}
+
+
+	</script>
+</body>
+</html>
