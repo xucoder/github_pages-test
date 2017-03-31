@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>选项卡切换</title>
+    <style type="text/css">
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    ul {
+        list-style: none;
+        margin: 50px 50px 0px;
+        display: inline-block;
+    }
+    
+    li {
+        float: left;
+        /*background-color: red;*/
+        margin-left: 15px;
+        border-left: 1px solid grey;
+        border-top: 1px solid grey;
+        border-right: 1px solid grey;
+        padding: 5px 15px;
+    }
+    
+    #content {
+        width: 300px;
+        border-left: 1px solid blue;
+        border-right: 1px solid blue;
+        border-bottom: 1px solid blue;
+        border-top: 3px solid red;
+        margin-left: 50px;
+    }
+    
+    .contents1 {
+        /*display: none;*/
+    }
+    
+    .contents2 {
+        display: none;
+    }
+    
+    .contents3 {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="zt">
+        <ul>
+            <li>房产</li>
+            <li>家居</li>
+            <li>二手房</li>
+        </ul>
+        <div id="content">
+            <div class="contents1">
+                <p>275万购昌平凌铁三居 总价20万买一居</p>
+                <br/>
+                <p>200万内购五环三居 140万安家东三环</p>
+                <br/>
+            </div>
+            <div class="contents2">
+                <p>40平米出租房大改造 美少女的混搭小窝</p>
+                <br/>
+                <p>经典清新简欧爱家 90平米老方换发新生</p>
+                <br/>
+            </div>
+            <div class="contents3">
+                <p>通州豪华3居260万 二环稀缺2居250w甩</p>
+                <br/>
+                <p>西三环通透2层290万 130万2居限量抢购</p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    "use strict"
+    var lis = document.getElementsByTagName('li');
+    var contentList = document.querySelectorAll('#content div');
+    alert(contentList.length);
+    function hideAll() {
+        for (let i = 0; i < contentList.length; i++) {
+            contentList[i].style.display = 'none';
+        }
+    }
+    for (let i = 0; i < lis.length; i++) {
+        lis[i].onclick = function() {
+            hideAll();
+            contentList[i].style.display = 'block';
+        }
+    }
+    </script>
+</body>
+
+</html>
