@@ -51,9 +51,9 @@
 <body>
     <div id="zt">
         <ul>
-            <li>房产</li>
-            <li>家居</li>
-            <li>二手房</li>
+            <a href="javascript:void(0);"><li>房产</li></a>
+            <a href="javascript:void(0);"><li>家居</li></a>
+            <a href="javascript:void(0);"><li>二手房</li></a>
         </ul>
         <div id="content">
             <div class="contents1">
@@ -79,7 +79,6 @@
     "use strict"
     var lis = document.getElementsByTagName('li');
     var contentList = document.querySelectorAll('#content div');
-    alert(contentList.length);
     function hideAll() {
         for (let i = 0; i < contentList.length; i++) {
             contentList[i].style.display = 'none';
