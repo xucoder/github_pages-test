@@ -1,0 +1,67 @@
+/*初始化样式*/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#header{
+	/*background-color: black;*/
+	width: 800px;
+	height: 100px;
+	margin: 0 auto;
+
+}
+#header img{
+	float: left;
+}
+#header ul{
+	list-style-type: none;
+	float: right;
+}
+#header ul li{
+	/*position: relative;*/
+	margin: 80px 40px 0px 40px;
+	float: left;
+}
+#header ul li:hover{
+	background-color: orange;
+}
+#header ul li ul{
+	position: absolute;
+	display: none;
+
+}
+#header ul li ul li{
+	float: none;
+	width: 80px;
+	margin: 0px;
+	background-color: orange;
+}
+#header ul li ul li:hover{
+	background-color: white;
+}
+
+#header ul li:hover ul{
+	display: block;
+}
+#header ul a:hover{
+	color: blue;
+}
+
+#body{
+	background-color: red;
+	width: 800px;
+	height: 300px;
+	margin: 0 auto;
+}
+#footer{
+	background-color: blue;
+	width: 800px;
+	height: 200px;
+	margin: 0 auto;
+}
+#bottom{
+	background-color: yellow;
+	width: 800px;
+	height: 50px;
+	margin: 0 auto;
+}
